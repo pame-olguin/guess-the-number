@@ -1,8 +1,12 @@
 import random
+import time
+from colorama import Fore, Back, Style, init
 
 def turno_ordenador(numero_secreto):
   intento = random.randint(1, 100)
-  print(f"\nEl ordenador adivina: {intento}")
+  print(Fore.GREEN +f"\nEl ordenador adivina: {intento}")
+  print("Procesando...")
+  time.sleep(2)
 
   if intento == numero_secreto:
     print("\nEl ordenador ha adivinado el numero."+"\n")
