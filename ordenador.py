@@ -1,23 +1,24 @@
-import random
+from random import randint
 import time
-from colorama import Fore, Back, Style, init
+from colorama import Fore 
 
-def turno_ordenador(numero_secreto):
-  intento = random.randint(1, 100)
-  print(Fore.GREEN +f"\nEl ordenador adivina: {intento}")
-  print("Procesando...")
-  time.sleep(2)
+def turno_ordenador(numero_secreto, tentativas_ordenador):
+    intento = randint(1, 5)
+    print(Fore.GREEN + f"\nEl ordenador adivina: {intento}")
+    print("Procesando...")
+    time.sleep(2)
 
-  if intento == numero_secreto:
-    print("\nEl ordenador ha adivinado el numero."+"\n")
-    return True
-  
-  elif intento < numero_secreto:
-    print("\nEl numero secreto es mayor.")
+    tentativas_ordenador.append(intento)
 
-  else:
-    print("\nEl numero secreto es menor.") 
+    if intento == numero_secreto:
+        print("\nEl ordenador ha adivinado el número." + "\n")
+        return True
+    
+    elif intento < numero_secreto:
+        print("\nEl número secreto es mayor.")
+    
+    else:
+        print("\nEl número secreto es menor.")
 
     return False 
- 
   
