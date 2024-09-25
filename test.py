@@ -27,7 +27,8 @@ class TestJugador(unittest.TestCase):
         # Comprobamos que el intento se guardó en tentativas_jugador
         self.assertIn(50, tentativas_jugador)
 
-      
+
+         
     @patch('builtins.input', return_value='105')
     def test_numero_fuera_de_rango(self, mock_input):
         numero_secreto = 50
@@ -35,10 +36,13 @@ class TestJugador(unittest.TestCase):
 
         resultado = turno_jugador(numero_secreto, tentativas_jugador)
 
+        # Verificar que input fue llamado correctamente
+        mock_input.assert_called_once()
+
         # Comprobar si la función devuelve False cuando el jugador ingresa un número fuera de rango
-        self.assertFalse(resultado)
+        self.assertFalse(resultado, "La función debería devolver False para números fuera de rango.")
         # Comprobar que el número fuera de rango NO se añadió a la lista de tentativas
-        self.assertNotIn(105, tentativas_jugador)
+        self.assertNotIn(105, tentativas_jugador,"El número fuera de rango no debería añadirse a la lista de tentativas." )
 
 if __name__ == '__main__':
     unittest.main()

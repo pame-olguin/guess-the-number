@@ -3,7 +3,7 @@ import time
 from colorama import Fore 
 
 def turno_ordenador(numero_secreto, tentativas_ordenador):
-    intento = randint(1, 5)
+    intento = randint(1, 100)
     print(Fore.GREEN + f"\nEl ordenador adivina: {intento}")
     print("Procesando...")
     time.sleep(2)
