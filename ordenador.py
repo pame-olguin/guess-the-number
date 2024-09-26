@@ -21,3 +21,4 @@ def turno_ordenador(numero_secreto, tentativas_ordenador):
         print("\nEl número secreto es menor.")
 
     return False 
+  
