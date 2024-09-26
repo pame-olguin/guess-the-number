@@ -1,8 +1,9 @@
 import time
 from colorama import Fore
 
-def turno_jugador(numero_secreto, tentativas_jugador):
-    intento = int(input( Fore.YELLOW +"\n" +"Adivina un número entre 1 y 100:"))
+def turno_jugador(nombre, numero_secreto, tentativas_jugador):
+   
+    intento = int(input( Fore.YELLOW +"\n" +f"{nombre}, Adivina un número entre 1 y 100: "))
     print("Procesando...")
     time.sleep(2)
 

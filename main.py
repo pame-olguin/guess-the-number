@@ -14,9 +14,11 @@ def juego():
     print(Fore.MAGENTA + Style.BRIGHT + "\n*********BIENVENIDO AL JUEGO GUESS THE NUMBER*******\n")
     print("\n¡Comienza el juego de adivinanza!\n")
 
+    nombre = input("¿Cuál es tu nombre? ") 
+   
     while True:
         # Turno del jugador
-        if turno_jugador(numero_secreto, tentativas_jugadora):
+        if turno_jugador(nombre, numero_secreto, tentativas_jugadora):
             print(Fore.MAGENTA + Style.BRIGHT + f"\n¡Felicidades! El jugador ha ganado. Intentos: {tentativas_jugadora}\n")
             jugar_de_nuevo = input(Fore.CYAN + "¿Quieres jugar de nuevo? (si/no): ").lower()
             if jugar_de_nuevo != 'si':

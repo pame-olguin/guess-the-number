@@ -11,6 +11,7 @@ class TestLogicaJuego(unittest.TestCase):
 
 
 class TestJugador(unittest.TestCase):
+    
     @patch('builtins.input')
     def test_turno_jugador(self, mock_input):
         # Simulamos que el jugador ingresa '50'
